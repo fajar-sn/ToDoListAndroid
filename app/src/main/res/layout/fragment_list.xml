@@ -12,14 +12,6 @@
         android:layout_height="match_parent"
         tools:listitem="@layout/items_list" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/dummy_text"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="16dp"-->
-<!--        android:textSize="16sp"-->
-<!--        tools:text="@string/app_name" />-->
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_float_action_button"
         android:layout_width="wrap_content"

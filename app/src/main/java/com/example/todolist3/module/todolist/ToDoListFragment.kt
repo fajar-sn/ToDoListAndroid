@@ -10,15 +10,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todolist3.R
 import com.example.todolist3.base.BaseFragment
+import com.example.todolist3.data.model.Task
 import com.example.todolist3.module.form.FormActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ToDoListFragment : BaseFragment<ToDoListActivity, ToDoListContract.Presenter>(), ToDoListContract.View, View.OnClickListener {
 
     private lateinit var addNewTask: FloatingActionButton
-//    private lateinit var dummyTextView: TextView
     private lateinit var taskListRecyclerView: RecyclerView
-    var task: String = ""
+    var listTask : ArrayList<Task> = arrayListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,16 +32,13 @@ class ToDoListFragment : BaseFragment<ToDoListActivity, ToDoListContract.Present
 
         taskListRecyclerView = fragmentView.findViewById(R.id.items_list)
         taskListRecyclerView.setHasFixedSize(true)
-        showRecyclerList()
-
-//        dummyTextView = fragmentView.findViewById(R.id.dummy_text)
-//        dummyTextView.text = task
 
         addNewTask = fragmentView.findViewById(R.id.add_float_action_button)
         addNewTask.setOnClickListener(this)
 
         title = "To Do List"
 
+        showRecyclerList()
         return fragmentView
     }
 
@@ -55,7 +52,6 @@ class ToDoListFragment : BaseFragment<ToDoListActivity, ToDoListContract.Present
         mPresenter = presenter
     }
 
-
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.add_float_action_button -> redirectToFormLayout()
@@ -64,7 +60,7 @@ class ToDoListFragment : BaseFragment<ToDoListActivity, ToDoListContract.Present
 
     private fun showRecyclerList() {
         taskListRecyclerView.layoutManager = LinearLayoutManager(thisActivity)
-        val listTaskAdapter = ListTaskAdapter(task)
+        val listTaskAdapter = ListTaskAdapter(listTask)
         taskListRecyclerView.adapter = listTaskAdapter
     }
 

@@ -22,7 +22,7 @@ class FormFragment : BaseFragment<FormActivity, FormContract.Presenter>(), FormC
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         fragmentView = inflater.inflate(R.layout.fragment_form, container, false)
         mPresenter = FormPresenter(this)
@@ -40,10 +40,10 @@ class FormFragment : BaseFragment<FormActivity, FormContract.Presenter>(), FormC
         return fragmentView
     }
 
-    override fun redirectToList(task: String) {
+    override fun redirectToList() {
         val intent = Intent(thisActivity, ToDoListActivity::class.java)
-        intent.putExtra(ToDoListActivity.EXTRA_TASK, task)
         startActivity(intent)
+        thisActivity?.finish()
     }
 
     override fun setPresenter(presenter: FormContract.Presenter) {
@@ -59,11 +59,8 @@ class FormFragment : BaseFragment<FormActivity, FormContract.Presenter>(), FormC
 
     private fun addNewTask() {
         val newTask : String = newTaskEditText.text.toString()
-        redirectToList(newTask)
-    }
-
-    private fun redirectToList() {
         val intent = Intent(thisActivity, ToDoListActivity::class.java)
+        intent.putExtra(ToDoListActivity.EXTRA_TASK, newTask)
         startActivity(intent)
         thisActivity?.finish()
     }

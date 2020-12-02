@@ -10,6 +10,6 @@ interface FormContract {
     }
 
     interface View : BaseView<Presenter> {
-        fun redirectToList(task: String)
+        fun redirectToList()
     }
 }
