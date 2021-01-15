@@ -2,43 +2,76 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:orientation="vertical"
+    android:layout_gravity="center" >
 
-    <EditText
-        android:id="@+id/form_edit_text"
-        android:padding="16dp"
+    <TextView
+        android:labelFor="@id/title_edit_text"
+        android:id="@+id/title_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:hint="@string/form_edit_text"
+        android:text="@string/title"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/title_edit_text"
+        android:layout_marginVertical="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/black"
         android:inputType="text"
-        android:autofillHints="@string/form_edit_text" />
+        android:autofillHints="@string/title" />
 
-    <LinearLayout
-        android:id="@+id/form_linear_layout"
+    <TextView
+        android:labelFor="@id/description_edit_text"
+        android:id="@+id/description_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        >
+        android:text="@string/description"
+        android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/back_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="110dp"
-            android:text="@string/back_button" />
+    <EditText
+        android:id="@+id/description_edit_text"
+        android:layout_marginVertical="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:maxLines="5"
+        android:autofillHints="@string/description" />
 
-        <Button
-            android:id="@+id/submit_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:text="@string/submit_button" />
+    <TextView
+        android:labelFor="@id/date_edit_text"
+        android:id="@+id/datetime_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/date"
+        android:textSize="16sp" />
 
-    </LinearLayout>
+    <EditText
+        android:id="@+id/date_edit_text"
+        android:layout_marginVertical="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
+        android:inputType="date"
+        android:autofillHints="@string/date"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="?attr/colorAccent"
+        android:text="@string/submit_button" />
 
 </LinearLayout>

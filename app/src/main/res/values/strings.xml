@@ -7,9 +7,18 @@
     <string name="form_edit_text">Add or Edit Item</string>
     <string name="submit_button">Submit</string>
     <string name="back_button">Back</string>
-    <string name="title">Title</string>
     <string name="password">Password</string>
     <string name="add_new_task">Add new task</string>
     <string name="email">Email</string>
     <string name="login">Login</string>
+    <string name="name">Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="date">Date</string>
+    <string name="click_here_to_input_datetime">Click here to input datetime</string>
+    <string name="is_done">Is Done</string>
+    <string name="edit_task">Edit task</string>
+    <string name="delete_task">Delete task</string>
+    <string name="share_task">Share Task</string>
 </resources>
